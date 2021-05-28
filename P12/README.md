@@ -43,7 +43,7 @@ decode([E|Encoding], [E|Decoded]) :-
 Example
 
 ```prolog
-?- encode_modified([a,a,b,c,c,a,d,e,e],X), decode(X,Y).
-X = [[2, a], b, [2, c], a, d, [2, e]],
-Y = [a, a, b, c, c, a, d, e, e].
+?- Raw = [a,a,b,c,c,a,d,e,e], encode_modified(Raw,Encoded), decode(Encoded,Raw).
+Raw = [a, a, b, c, c, a, d, e, e],
+Encoded = [[2, a], b, [2, c], a, d, [2, e]].
 ```
