@@ -1,6 +1,4 @@
-# Problem 01 \*
-
-# Solution
+# Solution 01 \*
 
 This predicate should return true if we _know_ the last element.
 
