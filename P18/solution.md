@@ -7,7 +7,7 @@
 X = [c,d,e,f,g]
 ```
 
-We can just resuse the predicate `split_nth/4` defined in [Problem 16](./P16/solution.md).
+We can just resuse the predicate `split_nth/4` defined in [Problem 16](../P16/solution.md).
 
 ```prolog
 split_nth(L,N,Prefix,Suffix) :-
