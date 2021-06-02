@@ -4,7 +4,7 @@ https://www.ic.unicamp.br/~meidanis/courses/mc336/2009s2/prolog/problemas/
 
 | Problem | Description                                                                                           | difficulty |
 | ------- | ----------------------------------------------------------------------------------------------------- | ---------- |
-| P01     | Find the last element of a list.                                                                      | \*         |
+| P01     | [Find the last element of a list.](./P01)                                                             | \*         |
 | P02     | Find the last but one element of a list.                                                              | \*         |
 | P03     | Find the K'th element of a list.                                                                      | \*         |
 | P04     | Find the number of elements of a list.                                                                | \*         |
@@ -21,3 +21,4 @@ https://www.ic.unicamp.br/~meidanis/courses/mc336/2009s2/prolog/problemas/
 | P15     | Duplicate the elements of a list a given number of times.                                             | \*\*       |
 | P16     | Drop every N'th element from a list.                                                                  | \*\*       |
 | P17     | Split a list into two parts; the length of the first part is given.                                   | \*         |
+| P18     | Extract a slice from a list                                                                           | \*\*       |
