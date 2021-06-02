@@ -22,7 +22,7 @@ true.
 
 ## Base Case
 
-We know that "The first element in the list is number 1".
+We know that "The first element in the list is number 1" - i.e lists are not 0 indexed.
 Let's encode this as the base case.
 
 ```prolog
@@ -33,21 +33,15 @@ element_at(X,[X|_],1).
 
 Now we only need to consider what happens if `X` is **not** the first element of the list.
 
+**If** `J` is `K-1` and the value at the `Jth` index of `Xs` is `X`, **then** the value at the `Kth` index of `[_|Xs]` is `X`.
+
 ```prolog
-element_at(X,[Y|Ys],K) :-
-    element_at(X,Ys,J),
-    K is J + 1.
+element_at(X,[_|Xs],K) :- J is K-1, element_at(X,Xs,J).
 ```
-
-If we have a list `Ys` such that `X` is the `Jth` element then `X` must be the `Kth` element of `[Y|Ys]` where `J = K - 1`.
-
-Note that `J = K - 1` and `K = J + 1` should be equiavalent.
 
 ## Program
 
 ```prolog
-element_at(X,[X|_],1).
-element_at(X,[Y|Ys],K) :-
-    element_at(X,Ys,J),
-    J is K - 1.
+element_at(X,[X|_],1)  :- !.
+element_at(X,[_|Xs],K) :- J is K-1, element_at(X,Xs,J).
 ```

@@ -28,7 +28,7 @@ The base case is a list of length 2 containing the element that we are searching
 last_but_one(X,[X,_]).
 ```
 
-for example `last_but_one(a,[a,b])` should be true.
+for example `last_but_one(a,[a,b])` should is **true**.
 
 ## General Case
 

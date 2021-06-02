@@ -26,21 +26,33 @@ The base case is a singleton list containing the element that we are searching f
 my_last(X,[X]).
 ```
 
-for example `my_last(a,[a])` should be true.
+for example `my_last(a,[a])` is **true**.
 
 ## General Case
 
-For the general case we say that **if** last element of an input `Xs` is equal to `X`, i.e `my_last(X,Xs)` **then** the last element of an input `[_|Xs]` is equal to `X`.
-
-In other words - the _head_ of a list plays no role in determining the truthfullness of the predicate.
+Now that we have a base case, the general case can be described as follows: **if** the last element of a list `L` is equal to `X`, i.e `my_last(X,L)` **then** the last element of an input with one more _arbitrary_ element in the head position `[_|L]` is equal to `X`. The use of `_` denotes a variable that we are not interested in.
 
 ```prolog
-my_last(X,[_|Xs]) :- my_last(X,Xs).
+my_last(X,[_|L]) :- my_last(X,L).
+```
+
+As lists are just cons cells - we could define a predicate like this.
+
+```prolog
+my_last(X,cons(X,nil)) :- !.
+my_last(X,cons(_,L))   :- my_last(X,L).
+```
+
+```prolog
+?- my_last(X,cons(a,nil)).
+X = a.
+?- my_last(X,cons(a,cons(b,nil))).
+X = b.
 ```
 
 ## Program
 
 ```prolog
 my_last(X,[X]).
-my_last(X,[_|Xs]) :- my_last(X,Xs).
+my_last(X,[_|L]) :- my_last(X,L).
 ```
